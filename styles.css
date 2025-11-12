@@ -1,0 +1,68 @@
+:root{
+  --bg:#ffffff;
+  --accent:#6b63f6;
+  --muted:#f5f7fb;
+  --card:#ffffff;
+  --text:#222;
+  --radius:12px;
+  --shadow: 0 6px 18px rgba(33,33,33,0.08);
+  --gap:24px;
+  font-family: 'Montserrat', sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.hero{
+  background: linear-gradient(120deg, #6b63f6 0%, #8e57c8 100%);
+  color:#fff;
+  padding:56px 16px;
+  text-align:center;
+}
+.hero-inner{max-width:1100px;margin:0 auto}
+.name{font-family: 'Baloo Tamma 2', cursive;font-size:clamp(28px,6vw,56px);margin-bottom:8px}
+.subtitle{opacity:.9;margin-top:6px;font-size:18px}
+.container{max-width:1100px;margin:28px auto;padding:0 16px;display:grid;grid-template-columns:1fr;gap:var(--gap)}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:22px;
+  border:1px solid rgba(30,30,30,0.03);
+}
+
+.section-title{
+  font-size:22px;color:var(--accent);margin-bottom:12px;position:relative;padding-bottom:10px;
+}
+.section-title::after{
+  content:"";position:absolute;left:0;right:0;height:3px;background:var(--accent);bottom:0;opacity:.25;border-radius:2px;transform:translateY(8px)
+}
+
+.entry{margin-top:12px}
+.entry-inner{
+  background:var(--muted);
+  border-radius:8px;
+  padding:18px;
+  position:relative;
+  border-left:4px solid rgba(107,99,246,0.85);
+}
+.entry-inner h3{color:var(--accent);margin-bottom:6px;font-size:18px}
+.entry-inner .date{display:block;font-style:italic;color:#666;margin-bottom:8px}
+.entry-inner p{color:#333;line-height:1.6}
+.about p{line-height:1.6;color:#333}
+.skills-list{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin-top:8px}
+.skills-list li{
+  background:linear-gradient(180deg,#fff,#fbfbff);
+  padding:10px 14px;border-radius:10px;border:1px solid rgba(30,30,30,0.04);font-weight:600;color:#333
+}
+.contacts{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.btn{
+  display:inline-block;background:var(--card);border-radius:10px;padding:10px 14px;border:1px solid rgba(30,30,30,0.06);text-decoration:none;color:var(--text);box-shadow:0 6px 12px rgba(33,33,33,0.04);font-weight:600
+}
+.btn:hover{transform:translateY(-2px);transition:all .15s ease}
+.footer{text-align:center;color:#777;padding:18px 0;font-size:14px;margin-top:18px}
+@media(min-width:900px){
+  .container{grid-template-columns:repeat(2,1fr)}
+  .education,.experience{grid-column:span 2}
+  .skills{grid-column:span 1}
+  .contact{grid-column:span 1}
+}
